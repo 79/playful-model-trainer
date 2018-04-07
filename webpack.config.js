@@ -3,7 +3,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: './src/app.js',
+  entry: ['babel-polyfill', './src/app.js'],
   output: {
     path: './dist',
     filename: 'bundle.js'
@@ -18,7 +18,7 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel-loader',
       query: {
-        presets: ['es2015']
+        presets: ['es2015', 'stage-0']
       }
     }, {
       test: /\.(scss|sass)$/,

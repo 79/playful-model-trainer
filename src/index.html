@@ -5,8 +5,41 @@
     <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/p5.js"></script>
     <title>P5 Example</title>
+    <style>
+      body {
+        font-size: 24px;
+      }
+
+      .controls {
+        position: absolute;
+        z-index: 999;
+        left: 50%;
+        bottom: 0;
+        right: 0;
+        top: 50%;
+        display: none;
+      }
+    </style>
 </head>
 <body>
   <div id="sketch"></div>
+
+  <div class="controls">
+    <button id="train">train</button>
+
+    <form class="predict-form">
+      <select class="predict-ethnicity form-control form-control-lg">
+        <option>ethnicity</option>
+        <option value="0">black</option>
+        <option value="1">hispanic</option>
+        <option value="2">native-american</option>
+        <option value="3">other</option>
+        <option value="4">asian</option>
+        <option value="5">white</option>
+      </select>
+
+      <input type="submit" value="predict" />
+    </form>
+  </div>
 </body>
 </html>
